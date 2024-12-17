@@ -1,0 +1,185 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, lightblue, lightpink);
+}
+
+#chat-container {
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0px 10px 2px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    padding: 10px;
+    background-image: url(https://img.freepik.com/free-vector/hearts-valentines-day-background-design-vector-illustration_1284-50461.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+#user-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+#username, #room {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#set-username {
+    padding: 10px;
+    border: none;
+    background: blueviolet;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#set-username:hover {
+    background-color: darkviolet;
+}
+
+#messages {
+    height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 4px;
+    word-wrap: break-word;
+    
+}
+
+#messages div {
+    margin: 5px 0;
+    max-width: 70%; /* Limit message width */
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 10px;
+    border:1px solid black;
+}
+
+/* Username styles */
+.username {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    display: block;
+}
+
+/* Self messages */
+.self .username {
+    color: rgb(255, 0, 0);
+    text-align: left; /* Align usernames to the right for "You" */
+}
+
+/* Other messages */
+.other .username {
+    color: blueviolet;
+    text-align: left; /* Align usernames to the left for others */
+}
+
+/* .self .info{
+    text-align: right; 
+}*/
+
+.info {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+   
+}
+
+#input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+}
+
+#send {
+    width: 50px;
+    background: blueviolet;
+    color: whitesmoke;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+#send:disabled {
+    background-color: rgb(41, 41, 70);
+}
+
+/* Responsive styles */
+
+/* Small devices (e.g., smartphones) */
+@media (max-width: 576px) {
+    body {
+        padding: 10px;
+    }
+
+    #chat-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 5px;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    #messages {
+        height: 200px;
+    }
+
+    #username, #room, #input, #send {
+        font-size: 0.875rem;
+    }
+}
+
+/* Medium devices (e.g., tablets) */
+@media (min-width: 577px) and (max-width: 768px) {
+    #chat-container {
+        max-width: 600px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    #messages {
+        height: 250px;
+    }
+}
+
+/* Large devices (e.g., desktops) */
+@media (min-width: 769px) {
+    #chat-container {
+        max-width: 500px;
+    }
+
+    #messages {
+        height: 300px;
+    }
+}
